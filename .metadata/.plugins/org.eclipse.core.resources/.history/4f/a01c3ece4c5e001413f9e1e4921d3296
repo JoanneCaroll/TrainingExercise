@@ -41,8 +41,9 @@ public class CategoryListFragment extends ListFragment{
 	                    .inflate(R.layout.list_category, null);
 	            }	                 
 	            
-	            Categories c = getItem(position);            
-
+	            Categories c = getItem(position);
+	            ImageView logo = (ImageView)convertView.findViewById(R.id.logo);
+	            
 	            TextView categoryName =
 	                (TextView)convertView.findViewById(R.id.category_name);
 	            categoryName.setText(c.getmCategoryName());

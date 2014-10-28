@@ -39,9 +39,16 @@ public class CategoryListFragment extends ListFragment{
 	            if (null == convertView) {
 	                convertView = getActivity().getLayoutInflater()
 	                    .inflate(R.layout.list_category, null);
-	            }	                 
+	            }
+	     
+	            ViewHolder holder = new ViewHolder();
+	            holder.icon = (ImageView) convertView.findViewById(R.id.listitem_image);
+	            holder.text = (TextView) convertView.findViewById(R.id.listitem_text);
+	            holder.timestamp = (TextView) convertView.findViewById(R.id.listitem_timestamp);
+	            holder.progress = (ProgressBar) convertView.findViewById(R.id.progress_spinner);
+	            convertView.setTag(holder);
 	            
-	            Categories c = getItem(position);            
+	            Categories c = getItem(position);
 
 	            TextView categoryName =
 	                (TextView)convertView.findViewById(R.id.category_name);
@@ -53,5 +60,10 @@ public class CategoryListFragment extends ListFragment{
 	        }
 	    }
 	    
-
+	 static class ViewHolder {
+		  TextView text;
+		  TextView timestamp;
+		  ImageView icon;		  
+		  int position;
+		}
 }

@@ -13,7 +13,7 @@ public class CategoryArchive {
 		mAppContext = c;
 		mCategories = new ArrayList<Categories>();
 		
-		for(int i=0; i<12; i++){
+		for(int i=0; i<11; i++){
 			Categories cat = new Categories();
 			if(i==0) cat.setmCategoryName("Accomodation");
 			if(i==1) cat.setmCategoryName("Automotive");
