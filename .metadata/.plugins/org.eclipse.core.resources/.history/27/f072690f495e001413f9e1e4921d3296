@@ -1,0 +1,63 @@
+package com.example.localdirectory;
+
+import java.util.ArrayList;
+
+import android.content.Context;
+
+public class CategoryArchive {
+
+	private String[] mCategories = new String[11];
+	private Context mAppContext;
+	private static CategoryArchive sCatArch;
+	private CategoryArchive(Context c){
+		mAppContext = c;
+		//Categories cat = new Categories();
+		mCategories[0]="Accomodation";
+		mCategories[1]="Automotive";
+		mCategories[2]="Education and Learning";
+		mCategories[3]="Entertainment";
+		mCategories[4]="Financial Services";
+		mCategories[5]="Food and beverages";
+		mCategories[6]="Hair and beauty";
+		mCategories[7]="Medical";
+		mCategories[8]="Professional Services";
+		mCategories[9]="Religion";
+		mCategories[10]="Restaurant";
+		
+//		
+//		cat.setmCategoryName("Accomodation");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Automotive");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Education and Learning");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Entertainment");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Financial Services");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Food and beverages");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Hair and beauty");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Medical");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Professional Services");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Religion");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Restaurant");
+//		mCategories.add(cat);
+//		cat.setmCategoryName("Travel and Transport");
+//		mCategories.add(cat);		
+	}
+	public String[] getCategories(){
+		return mCategories;
+	}
+	
+	public static CategoryArchive get(Context c) {
+	        if (sCatArch == null) {
+	        	sCatArch = new CategoryArchive(c.getApplicationContext());
+	        }
+	        return sCatArch;
+	    }
+}

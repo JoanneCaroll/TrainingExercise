@@ -1,0 +1,45 @@
+package com.example.localdirectory;
+
+import java.util.ArrayList;
+
+import android.content.Context;
+
+public class CategoryArchive {
+
+	private ArrayList<Categories> mCategories;
+	private Context mAppContext;
+	private CategoryArchive(Context c){
+		mAppContext = c;
+		mCategories = new ArrayList<Categories>();
+		Categories cat = new Categories();
+		cat.setmCategoryName("Accomodation");
+		mCategories.add(cat);
+		cat.setmCategoryName("Automotive");
+		mCategories.add(cat);
+		cat.setmCategoryName("Education and Learning");
+		mCategories.add(cat);
+		cat.setmCategoryName("Entertainment");
+		mCategories.add(cat);
+		cat.setmCategoryName("Financial Services");
+		mCategories.add(cat);
+		cat.setmCategoryName("Food and beverages");
+		mCategories.add(cat);
+		cat.setmCategoryName("Hair and beauty");
+		mCategories.add(cat);
+		cat.setmCategoryName("Medical");
+		mCategories.add(cat);
+		cat.setmCategoryName("Professional Services");
+		mCategories.add(cat);
+		cat.setmCategoryName("Religion");
+		mCategories.add(cat);
+		cat.setmCategoryName("Restaurant");
+		mCategories.add(cat);
+		cat.setmCategoryName("Travel and Transport");
+		mCategories.add(cat);		
+	}
+	public ArrayList<Categories> getCategories(){
+		return mCategories;
+	}
+	
+
+}

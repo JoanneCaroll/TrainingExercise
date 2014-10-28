@@ -1,0 +1,43 @@
+package com.example.localdirectory;
+
+import android.os.Bundle;
+import android.support.v4.app.ListFragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class CategoryListFragment extends ListFragment{
+	public static final String TAG = "CategoryListFragment";
+	public String[] mCategories;
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState); 
+		getActivity().setTitle(R.string.hello_world);
+		mCategories = CategoryArchive.get(getActivity()).getCategories();
+	}
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) { 
+        Categories c = (Categories)(getListAdapter()).getItem(position);
+        Log.d(TAG, c.getmCategoryName() + " was clicked");
+    }
+
+//	 private class CategoryAdapter extends ArrayAdapter<Categories> {
+    
+    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
+//        if (null == convertView) {
+//            convertView = getActivity().getLayoutInflater()
+//                .inflate(R.layout.list_category, null);
+//        }
+    	View v = inflater.inflate(R.layout.list_category, parent, false);
+        Categories c = new Categories();
+
+        TextView categoryTextView =
+            (TextView)v.findViewById(R.id.category_name);
+        categoryTextView.setText(c.getmCategoryName());
+        
+        return v;
+    }
+}
