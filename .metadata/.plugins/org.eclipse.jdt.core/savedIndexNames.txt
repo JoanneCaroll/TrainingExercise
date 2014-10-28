@@ -1,0 +1,6 @@
+INDEX VERSION 1.126+/home/joannecaroll/Documents/TrainingExercise/.metadata/.plugins/org.eclipse.jdt.core
+1855739514.index
+50060383.index
+3388542002.index
+4035438249.index
+1270315800.index
